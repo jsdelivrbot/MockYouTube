@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class VideoListItem extends Component {
+export default class VideoListItem extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -23,5 +23,3 @@ class VideoListItem extends Component {
 		);
 	}
 }
-
-export default VideoListItem;
