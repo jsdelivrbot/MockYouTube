@@ -16,7 +16,11 @@ export default class SearchBar extends Component {
 		const { term } = this.state;
 		return (
 			<div className="search-bar">
-				<input value={term} onChange={this.onInputChange.bind(this)} />
+				<input
+					value={term}
+					onChange={this.onInputChange.bind(this)}
+					placeholder="Seach"
+				/>
 			</div>
 		);
 	}
