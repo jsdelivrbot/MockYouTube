@@ -1,13 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HTMLWebapckPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	entry: './src/index.js',
 	output: {
 		path: path.resolve(__dirname, 'build'),
-		filename: 'bundle.js',
-		publicPath: 'build/'
+		filename: '[name].js',
+		publicPath: './'
 	},
 	module: {
 		rules: [
@@ -25,7 +26,12 @@ module.exports = {
 			}
 		]
 	},
-	plugins: [new ExtractTextPlugin('style.css')],
+	plugins: [
+		new ExtractTextPlugin('style.css'),
+		new HTMLWebapckPlugin({
+			template: './index.html'
+		})
+	],
 	resolve: {
 		extensions: ['.js', '.jsx']
 	},
