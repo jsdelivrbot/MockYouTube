@@ -1,14 +1,22 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+<<<<<<< HEAD
 const HTMLWebapckPlugin = require('html-webpack-plugin');
+=======
+>>>>>>> 8e7998fce4d48dd168d6113bf022221fed141234
 
 module.exports = {
 	entry: './src/index.js',
 	output: {
 		path: path.resolve(__dirname, 'build'),
+<<<<<<< HEAD
 		filename: '[name].js',
 		publicPath: './'
+=======
+		filename: 'bundle.js',
+		publicPath: 'build/'
+>>>>>>> 8e7998fce4d48dd168d6113bf022221fed141234
 	},
 	module: {
 		rules: [
@@ -26,12 +34,16 @@ module.exports = {
 			}
 		]
 	},
+<<<<<<< HEAD
 	plugins: [
 		new ExtractTextPlugin('style.css'),
 		new HTMLWebapckPlugin({
 			template: './index.html'
 		})
 	],
+=======
+	plugins: [new ExtractTextPlugin('style.css')],
+>>>>>>> 8e7998fce4d48dd168d6113bf022221fed141234
 	resolve: {
 		extensions: ['.js', '.jsx']
 	},
