@@ -16,8 +16,14 @@ class App extends Component {
 			videos: [],
 			selectedVideo: null
 		};
+	}
 
-		this.videoSearch('');
+	componentDidMount() {
+		this.VSearch = this.videoSearch('');
+	}
+
+	componentWillUnmount() {
+		this.VSearch.stop();
 	}
 
 	videoSearch(term) {

@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 
 export default class VideoListItem extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		const { video, onVideoSelect } = this.props;
 		const imgURL = video.snippet.thumbnails.default.url;
+
 		return (
 			<li onClick={() => onVideoSelect(video)} className="list-group-item">
 				<div className="video-list media">

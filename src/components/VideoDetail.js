@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 
 export default class VideoDetail extends Component {
-	constructor(props) {
-		super(props);
-	}
 	render() {
 		const { video } = this.props;
-		if (!video) {
-			return <div>Loading...</div>;
-		}
-		const { videoId } = video.id;
+		if (!video) return <div>Loading...</div>;
+
+		const { id: { videoId }, snippet: { title, description } } = video;
 		const url = `https://www.youtube.com/embed/${videoId}`;
 
 		return (
@@ -18,8 +14,8 @@ export default class VideoDetail extends Component {
 					<iframe className="embed-responsive-item" src={url} />
 				</div>
 				<div className="details">
-					<h4 className="title">{video.snippet.title}</h4>
-					<div>{video.snippet.description}</div>
+					<h4 className="title">{title}</h4>
+					<div>{description}</div>
 				</div>
 			</div>
 		);
